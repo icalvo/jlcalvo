@@ -23,13 +23,14 @@ ls -r *.* | %{
 
             $warnings = @()
             cat gen.html `
-            | % { if ($_.Contains("Warning:")) { $warnings += $_ } } `
+            | % { if ($_.Contains("Warning:")) { $warnings += $_ }; $_ } `
             | % { $_ -replace ".php", ".html" } `
             > $targetFile
 
             del gen.html
 
             if ($warnings.Length -ne 0) {
+                echo "ERRORS"
                 $warnings
                 del $targetFile
             }

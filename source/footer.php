@@ -29,14 +29,14 @@
 							
 				<div id="footer-resume">
 					<h5>Volver a Inicio</h5>
-					<div id="download-resume"><a href="resume.php"></a></div>
+					<div id="download-resume"><a href="index.php"></a></div>
 				</div><!-- footer-resume end -->
 
 				
 				<div class="clear"></div>
 				
 				<ul id="footer-nav">
-					<li<? if ($current == 'resume'): ?> class="current"<? endif; ?>><a href="resume.php">Inicio</a></li>
+					<li<? if ($current == 'resume'): ?> class="current"<? endif; ?>><a href="index.php">Inicio</a></li>
 					<li<? if ($current == 'portfolio'): ?> class="current"<? endif; ?>><a href="portfolio.php">Fotos</a></li>
 					<li<? if ($current == 'project'): ?> class="current"<? endif; ?>><a href="project.php">Publicaciones</a></li>
 					<li<? if ($current == 'aboutme'): ?> class="current"<? endif; ?>><a href="about.php">Curriculum</a></li>

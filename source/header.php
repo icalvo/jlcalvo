@@ -29,7 +29,7 @@
 			<h1>José Luis Calvo Martín</h1>
 				
 			<ul id="main-nav">
-				<li<? if ($current == 'resume'): ?> class="current"<? endif; ?>><a href="resume.php">Inicio</a></li>
+				<li<? if ($current == 'resume'): ?> class="current"<? endif; ?>><a href="index.php">Inicio</a></li>
 				<li<? if ($current == 'portfolio'): ?> class="current"<? endif; ?>><a href="portfolio.php">Fotos</a></li>
 				<li<? if ($current == 'project'): ?> class="current"<? endif; ?>><a href="project.php">Publicaciones</a></li>
 				<li<? if ($current == 'aboutme'): ?> class="current"<? endif; ?>><a href="about.php">Curriculum</a></li>
