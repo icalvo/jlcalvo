@@ -1,6 +1,9 @@
 using namespace System.IO
+$sourceRoot = ".\source"
 $targetRoot = ".\docs"
 
+$targetRoot = [Path]::GetFullPath($targetRoot)
+pushd $sourceRoot
 ls -r *.* | %{
     $sourceFile = $_.FullName
     $name = [Path]::GetFileNameWithoutExtension($_)
@@ -16,12 +19,20 @@ ls -r *.* | %{
     switch ($ext) {
         ".php" {
             $targetFile = [Path]::Combine($target, $name + ".html")
-            ..\php\php.exe $sourceFile > gen.html
+            ..\..\php\php.exe $sourceFile > gen.html
+
+            $warnings = @()
             cat gen.html `
+            | % { if ($_.Contains("Warning:")) { $warnings += $_ } } `
             | % { $_ -replace ".php", ".html" } `
             > $targetFile
 
             del gen.html
+
+            if ($warnings.Length -ne 0) {
+                $warnings
+                del $targetFile
+            }
         }
         ".ps1" { $targetFile = "IGNORE" }
         Default {
@@ -32,3 +43,5 @@ ls -r *.* | %{
 
     echo "Target: $targetFile"
 }
+
+popd

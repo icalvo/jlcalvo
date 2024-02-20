@@ -31,12 +31,7 @@
 					<h5>Volver a Inicio</h5>
 					<div id="download-resume"><a href="resume.php"></a></div>
 				</div><!-- footer-resume end -->
-				
-				<!--
-				<center><h5><strong>Visitas</strong></h5></center>
-				<center><br><? include("contador.php")?></center>
-				-->
-				
+
 				
 				<div class="clear"></div>
 				

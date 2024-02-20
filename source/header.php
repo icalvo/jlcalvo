@@ -11,9 +11,6 @@
 <link rel="stylesheet" type="text/css" media="screen" href="css/prettyPhoto.css" />
 <link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:light' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
-<?php if ($current == 'contact'): ?>
-<link rel="stylesheet" type="text/css" href="contact-form/formValidator/validationEngine.jquery.css" />
-<?php endif; ?>
 <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen" href="css/ie-fix.css" /><![endif]-->
 <script type="text/javascript" src="js/jquery-1.5.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.tweet.js"></script>
@@ -36,7 +33,6 @@
 				<li<? if ($current == 'portfolio'): ?> class="current"<? endif; ?>><a href="portfolio.php">Fotos</a></li>
 				<li<? if ($current == 'project'): ?> class="current"<? endif; ?>><a href="project.php">Publicaciones</a></li>
 				<li<? if ($current == 'aboutme'): ?> class="current"<? endif; ?>><a href="about.php">Curriculum</a></li>
-				<li<? if ($current == 'contact'): ?> class="current"<? endif; ?>><a href="contact.php">Contacto</a></li>
 			</ul>
 				
 		</div><!-- header end -->
