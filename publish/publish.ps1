@@ -1,5 +1,5 @@
 using namespace System.IO
-$targetRoot = ".\publish"
+$targetRoot = "C:\Users\ignacio.calvo\Repos\jlcalvo"
 
 ls -r *.* | %{
     $sourceFile = $_.FullName
@@ -9,26 +9,24 @@ ls -r *.* | %{
 
     $target = [Path]::Combine($targetRoot, $relativePath)
 
-    md -force $target | Out-Null
+    md -force $target
 
-    echo "Processing: $sourceFile"
+    echo "Name: $name"
+    echo "Ext: $ext"
+    echo "RelPath: $relativePath"
+    echo "Source: $_"
+    echo "Target: $target"
 
     switch ($ext) {
         ".php" {
             $targetFile = [Path]::Combine($target, $name + ".html")
-            ..\php\php.exe $sourceFile > gen.html
-            cat gen.html `
-            | % { $_ -replace ".php", ".html" } `
-            > $targetFile
-
-            del gen.html
+            ..\php\php.exe $sourceFile > $targetFile
         }
-        ".ps1" { $targetFile = "IGNORE" }
         Default {
             $targetFile = [Path]::Combine($target, $name + $ext)
+            "JUST COPY"
             cp $sourceFile $target
         }
     }
 
-    echo "Target: $targetFile"
 }
