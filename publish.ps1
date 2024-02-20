@@ -1,5 +1,5 @@
 using namespace System.IO
-$targetRoot = ".\publish"
+$targetRoot = ".\docs"
 
 ls -r *.* | %{
     $sourceFile = $_.FullName
