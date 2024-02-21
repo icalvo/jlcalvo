@@ -2,9 +2,9 @@ using namespace System.IO
 $sourceRoot = ".\source"
 $targetRoot = ".\docs"
 
-$targetRoot = [Path]::GetFullPath($targetRoot)
-pushd $sourceRoot
-ls -r *.* | %{
+$targetRoot = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($targetRoot)
+Push-Location $sourceRoot
+Get-ChildItem -r *.* | %{
     $sourceFile = $_.FullName
     $name = [Path]::GetFileNameWithoutExtension($_)
     $ext = $_.Extension
@@ -12,7 +12,7 @@ ls -r *.* | %{
 
     $target = [Path]::Combine($targetRoot, $relativePath)
 
-    md -force $target | Out-Null
+    New-Item -force $target | Out-Null
 
     echo "Processing: $sourceFile"
 
@@ -43,6 +43,7 @@ ls -r *.* | %{
     }
 
     echo "Target: $targetFile"
+    # read-host "Press key"
 }
 
-popd
+Pop-Location
