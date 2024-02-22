@@ -21,4 +21,4 @@ require_once 'header.php';
 			
 <?php
 
-require_once 'footer3.php';
+require_once 'footer.php';

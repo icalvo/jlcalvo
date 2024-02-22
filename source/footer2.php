@@ -22,8 +22,7 @@
 					<h5>Contacto</h5>
 					<ul>
 						<li>+34912338323</li>
-						<li><a href="mailto:jlcalvo@ucm.es" title="Envíame un email">jlcalvo@ucm.es</a></li>
-						<li><a href="contact.php">Formulario de contacto<span class="raquo">&#187;</span></a></li>
+						<li><a href="mailto:jlcalvo@med.ucm.es" title="Envíame un email">jlcalvo@med.ucm.es</a></li>
 					</ul>
 				</div><!-- footer-contact end -->
 							
@@ -39,7 +38,6 @@
 					<li<? if ($current == 'portfolio'): ?> class="current"<? endif; ?>><a href="portfolio.php">Fotos</a></li>
 					<li<? if ($current == 'project'): ?> class="current"<? endif; ?>><a href="project.php">Publicaciones</a></li>
 					<li<? if ($current == 'aboutme'): ?> class="current"<? endif; ?>><a href="about.php">Curriculum</a></li>
-					<li<? if ($current == 'contact'): ?> class="current"<? endif; ?>><a href="contact.php">Contacto</a></li>
 				</ul>
 				
 				<div id="go-top"></div>

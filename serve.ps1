@@ -1,0 +1,1 @@
+browser-sync start -s .\_publish\ -w
