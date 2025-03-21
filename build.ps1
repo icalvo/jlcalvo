@@ -22,7 +22,7 @@ Get-ChildItem -r *.* `
     switch ($ext) {
         ".php" {
             $targetFile = [Path]::Combine($target, $name + ".html")
-            ..\..\php\php.exe $sourceFile > gen.html
+            php $sourceFile > gen.html
 
             $warnings = @()
             Get-Content gen.html `
